@@ -1,7 +1,6 @@
 # Core-Skills-Android
-Starter code for Core Skills app assignment for Android.
+Team Members: Prayash Pant, Ashmita Thapaliya
+OS: Android
+Device: Samsung Galaxy S20+
 
-This is the 2021 update. 
-
-Begin this assignment by adding your names and group name to the Activity Main XML and TextView. 
 

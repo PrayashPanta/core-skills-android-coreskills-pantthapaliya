@@ -1,17 +1,13 @@
 package csci.cs.twu.edu.coreskills;
 
 import androidx.appcompat.app.AppCompatActivity;
-<<<<<<< HEAD
 
 import android.os.AsyncTask;
-=======
->>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-<<<<<<< HEAD
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -28,15 +24,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-=======
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import android.util.Log;
-import android.util.Log;
->>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 /**
 
  Assignment Notes: This activity should pull data from a REST JSON API based upon
@@ -64,10 +51,7 @@ public class WebServiceActivity extends AppCompatActivity {
     TextView instructorTextView;
     TextView locationTextView;
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,7 +68,6 @@ public class WebServiceActivity extends AppCompatActivity {
         // This will split the input from the user into an array.
         String[] courseToSearch = courseEditText.getText().toString().split(" ");
 
-<<<<<<< HEAD
         String deptName = courseToSearch[0];
         String deptNumber = courseToSearch[1];
 
@@ -94,11 +77,6 @@ public class WebServiceActivity extends AppCompatActivity {
         LousListAPIInterface apiInterface = LousListAPIClient.getClient().create(LousListAPIInterface.class);
         Call<List<Section>> call = apiInterface.sectionList(deptName,deptNumber);
 
-=======
-        // Task: create a service and a functioning REST client
-
-
->>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 
         // Tasks: Execute the request asynchronously, download the data with the provided department
         // and course information and save in a List of of Section. Use the corresponding field's
@@ -107,13 +85,11 @@ public class WebServiceActivity extends AppCompatActivity {
         // Hint2: there are methods in Section class to return a specified field value
 
 
-<<<<<<< HEAD
 
         call.enqueue(new Callback<List<Section>>() {
             @Override
             public void onResponse(Call<List<Section>> call, Response<List<Section>> response) {
                 List<Section> sectionList = response.body();
-                Toast.makeText(WebServiceActivity.this, "Total Found: " + sectionList.size(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -125,7 +101,4 @@ public class WebServiceActivity extends AppCompatActivity {
 
     }
 
-=======
-    }
->>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 }

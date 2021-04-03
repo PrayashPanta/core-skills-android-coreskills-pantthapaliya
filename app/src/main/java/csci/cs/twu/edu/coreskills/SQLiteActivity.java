@@ -1,6 +1,5 @@
 package csci.cs.twu.edu.coreskills;
 
-<<<<<<< HEAD
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,12 +9,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-=======
-import androidx.appcompat.app.AppCompatActivity;import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
->>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 
 /**
 
@@ -40,12 +33,9 @@ public class SQLiteActivity extends AppCompatActivity {
     TextView nameTextView;
     TextView compIDTextView;
 
-<<<<<<< HEAD
     DatabaseHelper DB;
 
 
-=======
->>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,17 +46,13 @@ public class SQLiteActivity extends AppCompatActivity {
 
         nameTextView = (TextView) findViewById(R.id.nameTextView);
         compIDTextView = (TextView) findViewById(R.id.compIDTextView);
-<<<<<<< HEAD
         DB = new DatabaseHelper(this);
-=======
->>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 
     }
 
     public void saveToDatabase(View view) {
         // Add code here to save to the database
 
-<<<<<<< HEAD
         String nameText = nameEditText.getText().toString();
         String compId = compIDEditText.getText().toString();
 
@@ -79,15 +65,12 @@ public class SQLiteActivity extends AppCompatActivity {
         }
 
 
-=======
->>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
     }
 
     public void loadFromDatabase(View view) {
 
         // Add code here to load from the database
 
-<<<<<<< HEAD
         Cursor res = DB.getdata();
         if (res.getCount()==0){
             Toast.makeText(this, "No Data Exists", Toast.LENGTH_SHORT).show();
@@ -99,7 +82,5 @@ public class SQLiteActivity extends AppCompatActivity {
 
 
 
-=======
->>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
     }
 }

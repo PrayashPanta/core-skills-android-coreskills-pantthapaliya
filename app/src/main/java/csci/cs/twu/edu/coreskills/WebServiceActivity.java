@@ -90,6 +90,8 @@ public class WebServiceActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Section>> call, Response<List<Section>> response) {
                 List<Section> sectionList = response.body();
+
+                Toast.makeText(WebServiceActivity.this, "SIZE OF LIST" + sectionList.size(), Toast.LENGTH_SHORT).show();
             }
 
             @Override

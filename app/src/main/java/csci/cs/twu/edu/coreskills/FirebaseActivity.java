@@ -1,12 +1,16 @@
 package csci.cs.twu.edu.coreskills;
 
 import androidx.annotation.NonNull;
+<<<<<<< HEAD
 import androidx.appcompat.app.AlertDialog;
+=======
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 import androidx.appcompat.app.AppCompatActivity;import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+<<<<<<< HEAD
 import android.widget.Toast;
 
 
@@ -18,6 +22,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+=======
+
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -49,7 +59,10 @@ public class FirebaseActivity extends AppCompatActivity {
     TextView instructorTextView;
     TextView locationTextView;
     private static final String TAG = FirebaseActivity.class.getSimpleName();
+<<<<<<< HEAD
     FirebaseFirestore db;
+=======
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,22 +80,29 @@ public class FirebaseActivity extends AppCompatActivity {
 
         // This will split the input from the user into an array.
         String[] courseToSearch = courseEditText.getText().toString().split(" ");
+<<<<<<< HEAD
         String name = courseToSearch[0];
         String id = courseToSearch[1];
 
 
         db = FirebaseFirestore.getInstance();
+=======
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 
         // Task: initialize an instance of Cloud Firestore
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
         // Tasks: Retrieve the contents of a single document using the department and course information
         // provided by the user, then use the fields information in the document to populate the
         // three placeholders
 
 
+<<<<<<< HEAD
         DocumentReference user = db.collection("CSCI").document(id);
 
         user.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -116,6 +136,8 @@ public class FirebaseActivity extends AppCompatActivity {
             }
         });
 
+=======
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 
 
 

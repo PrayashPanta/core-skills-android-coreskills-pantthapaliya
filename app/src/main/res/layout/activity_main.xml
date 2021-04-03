@@ -86,7 +86,11 @@
         android:id="@+id/studentOneTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:text="Prayash Pant" />
+=======
+        android:text="Student 1 Name" />
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 
     <TextView
         android:id="@+id/studentTwoTextView"
@@ -94,7 +98,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/studentOneTextView"
         android:layout_marginTop="12dp"
+<<<<<<< HEAD
         android:text="Ashmita Thapaliya" />
+=======
+        android:text="Student 2 Name" />
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 
     <TextView
         android:id="@+id/teamTextView"
@@ -102,6 +110,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/studentTwoTextView"
         android:layout_marginTop="10dp"
+<<<<<<< HEAD
         android:text="Pant-Thapaliya Core" />
+=======
+        android:text="Team Name" />
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 
 </RelativeLayout>

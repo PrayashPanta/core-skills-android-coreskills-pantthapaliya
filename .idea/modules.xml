@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core-skills-android-coreskills-pantthapaliya-master.iml" filepath="$PROJECT_DIR$/.idea/modules/core-skills-android-coreskills-pantthapaliya-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/core-skills-android-coreskills-pantthapaliya-master.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/core-skills-android-coreskills-pantthapaliya-master.app.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core-skills-android-Template.iml" filepath="$PROJECT_DIR$/.idea/modules/core-skills-android-Template.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/core-skills-android-Template.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/core-skills-android-Template.app.iml" />
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
     </modules>
   </component>
 </project>

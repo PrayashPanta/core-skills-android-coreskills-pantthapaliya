@@ -1,23 +1,34 @@
 package csci.cs.twu.edu.coreskills;
 
+<<<<<<< HEAD
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+=======
+import android.content.Intent;
+import android.content.pm.PackageManager;
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 import android.net.Uri;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.provider.MediaStore;
+=======
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+<<<<<<< HEAD
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
+=======
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 /**
 
 Assignment Notes: Add code here to make the call either the camera or
@@ -38,11 +49,16 @@ public class CameraActivity extends AppCompatActivity {
 
     ImageView imageView;
     Button takePictureButton;
+<<<<<<< HEAD
     Button choosePictureButton;
 
     Uri file;
     private String stringPath;
     private Intent iData;
+=======
+
+    Uri file;
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +67,10 @@ public class CameraActivity extends AppCompatActivity {
 
         takePictureButton = (Button) findViewById(R.id.takePictureButton);
         imageView = (ImageView) findViewById(R.id.imageView);
+<<<<<<< HEAD
         choosePictureButton = (Button) findViewById(R.id.imageLibraryButton);
+=======
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 
         // We are giving you the code that checks for permissions
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
@@ -78,12 +97,16 @@ public class CameraActivity extends AppCompatActivity {
         // Note you can send an intent to the camera to take a picture...
         // So start by considering that!
 
+<<<<<<< HEAD
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent,2);
+=======
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
     }
 
     public void getImageFromLibrary(View view) {
         // Add code here to start the process of getting a picture from the library
+<<<<<<< HEAD
         if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},PICK_IMAGE_REQUEST);
         }
@@ -92,6 +115,8 @@ public class CameraActivity extends AppCompatActivity {
             startActivityForResult(intent,PICK_IMAGE_REQUEST);
 
         }
+=======
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 
     }
 
@@ -103,6 +128,7 @@ public class CameraActivity extends AppCompatActivity {
 
         if (requestCode == REQUEST_TAKE_PHOTO) {
            // Add here.
+<<<<<<< HEAD
 
             Bitmap takeImage = (Bitmap) data.getExtras().get("data");
             imageView.setImageBitmap(takeImage);
@@ -126,6 +152,11 @@ public class CameraActivity extends AppCompatActivity {
             }
 
 
+=======
+        }
+        else if (requestCode == PICK_IMAGE_REQUEST) {
+            //Add here.
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 
         }
     }

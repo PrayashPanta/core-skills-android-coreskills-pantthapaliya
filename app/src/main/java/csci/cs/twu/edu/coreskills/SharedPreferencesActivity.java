@@ -1,14 +1,20 @@
 package csci.cs.twu.edu.coreskills;
 
 import androidx.appcompat.app.AppCompatActivity;
+<<<<<<< HEAD
 
 import android.content.Context;
 import android.content.SharedPreferences;
+=======
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+<<<<<<< HEAD
 import android.widget.Toast;
+=======
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 
 /**
 
@@ -30,8 +36,11 @@ public class SharedPreferencesActivity extends AppCompatActivity {
 
     TextView spnameTextView;
     TextView spcompIDTextView;
+<<<<<<< HEAD
     SharedPreferences sharedPreferences;
     String spnameStr, spcompStr;
+=======
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +52,17 @@ public class SharedPreferencesActivity extends AppCompatActivity {
 
         spnameTextView = (TextView) findViewById(R.id.spnameTextView);
         spcompIDTextView = (TextView) findViewById(R.id.spcompIDTextView);
+<<<<<<< HEAD
 
         sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+=======
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
     }
 
     public void saveToSharedPreferences(View view) {
 
         // Add your code here to save
+<<<<<<< HEAD
         spnameStr = spnameEditText.getText().toString();
         spcompStr = spcompIDEditText.getText().toString();
 
@@ -62,6 +75,8 @@ public class SharedPreferencesActivity extends AppCompatActivity {
         Toast.makeText(this,"Saved to Share Preferences, Please press load button to load the name and id", Toast.LENGTH_SHORT).show();
 
 
+=======
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 
 
     }
@@ -70,6 +85,7 @@ public class SharedPreferencesActivity extends AppCompatActivity {
 
         // Add your code here to load
 
+<<<<<<< HEAD
 
         SharedPreferences sp = getApplicationContext().getSharedPreferences(PREFS_NAME,Context.MODE_PRIVATE);
         String name = sp.getString("name","");
@@ -80,5 +96,7 @@ public class SharedPreferencesActivity extends AppCompatActivity {
 
 
 
+=======
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
     }
 }

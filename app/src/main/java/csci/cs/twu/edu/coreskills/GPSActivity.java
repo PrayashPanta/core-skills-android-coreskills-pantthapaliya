@@ -1,8 +1,11 @@
 package csci.cs.twu.edu.coreskills;
 
 import android.content.pm.PackageManager;
+<<<<<<< HEAD
 import android.location.Address;
 import android.location.Geocoder;
+=======
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -13,10 +16,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+<<<<<<< HEAD
 import android.widget.Toast;
 
 import java.util.List;
 import java.util.Locale;
+=======
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 
 /**
 
@@ -62,17 +68,21 @@ public class GPSActivity extends AppCompatActivity implements LocationListener {
 
         // Add code here to register the listener with the Location Manager to receive location updates
 
+<<<<<<< HEAD
         locationManager = (LocationManager)  getApplicationContext().getSystemService(LOCATION_SERVICE);
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,5000,5,this);
 
 
 
+=======
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 
     }
 
 
     @Override
     public void onLocationChanged(Location location) {
+<<<<<<< HEAD
 
         // Add code here to do stuff when the location changes
         currentLat = location.getLatitude();
@@ -92,6 +102,9 @@ public class GPSActivity extends AppCompatActivity implements LocationListener {
             e.printStackTrace();
 
         }
+=======
+        // Add code here to do stuff when the location changes
+>>>>>>> 4a146dc433d2f6d0843c823b7da145b19d603cc7
 
     }
 

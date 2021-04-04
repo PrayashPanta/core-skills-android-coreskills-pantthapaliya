@@ -72,7 +72,7 @@ public class GPSActivity extends AppCompatActivity implements LocationListener {
             return;
         }
 
-        
+
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 5, this);
 
 

@@ -18,6 +18,14 @@ import java.util.List;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import retrofit2.Call;
@@ -61,6 +69,8 @@ public class WebServiceActivity extends AppCompatActivity {
         courseNameTextView = (TextView) findViewById(R.id.courseNameTextView);
         instructorTextView = (TextView) findViewById(R.id.instructorTextView);
         locationTextView = (TextView) findViewById(R.id.locationTextView);
+
+
     }
 
     public void downloadData(View view) {
@@ -71,12 +81,13 @@ public class WebServiceActivity extends AppCompatActivity {
         String deptName = courseToSearch[0];
         String deptNumber = courseToSearch[1];
 
+
+
         // Task: create a service and a functioning REST client
 
 
-        LousListAPIInterface apiInterface = LousListAPIClient.getClient().create(LousListAPIInterface.class);
-        Call<List<Section>> call = apiInterface.sectionList(deptName,deptNumber);
-
+        LousListAPIInterface apiService =
+                LousListAPIClient.getClient().create(LousListAPIInterface.class);
 
         // Tasks: Execute the request asynchronously, download the data with the provided department
         // and course information and save in a List of of Section. Use the corresponding field's
@@ -86,20 +97,39 @@ public class WebServiceActivity extends AppCompatActivity {
 
 
 
+        Call<List<Section>> call = apiService.sectionList(deptName,deptNumber);
         call.enqueue(new Callback<List<Section>>() {
             @Override
             public void onResponse(Call<List<Section>> call, Response<List<Section>> response) {
-                List<Section> sectionList = response.body();
+                List<Section> sections = response.body();
+                String courseDisplay = "";
+                if (sections.size() != 0) {
+                    for (Section s : sections) {
+                        String courseName = s.getCourseName();
+                        String instructor = s.getInstructor();
+                        String location = s.getLocation();
 
-                Toast.makeText(WebServiceActivity.this, "SIZE OF LIST" + sectionList.size(), Toast.LENGTH_SHORT).show();
+                        courseNameTextView.setText("Course: " + courseName);
+                        instructorTextView.setText("Instructor: " + instructor);
+                        locationTextView.setText("Location: " + location);
+                    }
+
+
+                }
+
+                else{
+                    Toast.makeText(WebServiceActivity.this, "NO COURSE FOUND. EXAMPLE: CS 1010", Toast.LENGTH_SHORT).show();
+                }
             }
 
-            @Override
-            public void onFailure(Call<List<Section>> call, Throwable t) {
 
-            }
+
+                @Override
+                public void onFailure (Call<List<Section>> call, Throwable t){
+
+                }
+
         });
-
 
     }
 

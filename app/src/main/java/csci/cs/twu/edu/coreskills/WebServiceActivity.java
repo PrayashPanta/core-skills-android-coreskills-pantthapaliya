@@ -127,6 +127,7 @@ public class WebServiceActivity extends AppCompatActivity {
                 @Override
                 public void onFailure (Call<List<Section>> call, Throwable t){
 
+                    Toast.makeText(WebServiceActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
         });

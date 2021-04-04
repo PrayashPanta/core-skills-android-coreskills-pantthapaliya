@@ -1,5 +1,6 @@
 package csci.cs.twu.edu.coreskills;
 
+import android.Manifest;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -7,9 +8,11 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
+
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -20,15 +23,15 @@ import java.util.Locale;
 
 /**
 
-Assignment Notes: For this activity, we are embedding the LocationListener
-in this Activity, instead of creating a separate GPS class.  The code is basically
-the same, but is a bit easier to reference here.  You can find more info on
-how to do a LocationListener in the Service example code :
+ Assignment Notes: For this activity, we are embedding the LocationListener
+ in this Activity, instead of creating a separate GPS class.  The code is basically
+ the same, but is a bit easier to reference here.  You can find more info on
+ how to do a LocationListener in the Service example code :
 
  https://gitlab.com/csci3313sp20/serviceexample
 
 
-*/
+ */
 
 public class GPSActivity extends AppCompatActivity implements LocationListener {
 
@@ -46,24 +49,29 @@ public class GPSActivity extends AppCompatActivity implements LocationListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gps);
 
-        latTextView = (TextView)findViewById(R.id.latTextView);
-        lonTextView = (TextView)findViewById(R.id.lonTextView);
+        latTextView = (TextView) findViewById(R.id.latTextView);
+        lonTextView = (TextView) findViewById(R.id.lonTextView);
+
+        // Here is the code to handle permissions - you should not need to edit this.
+        if (Build.VERSION.SDK_INT >= 27 &&
+                ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+                ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION}, TAKE_PHOTO_PERMISSION);
+        }
 
     }
 
     public void startGPS(View view) {
 
-        // Here is the code to handle permissions - you should not need to edit this.
-        if ( Build.VERSION.SDK_INT >= 27 &&
-                ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_FINE_LOCATION ) != PackageManager.PERMISSION_GRANTED &&
-                ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[] { android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION }, TAKE_PHOTO_PERMISSION);
-        }
 
         // Add code here to register the listener with the Location Manager to receive location updates
 
-        locationManager = (LocationManager)  getApplicationContext().getSystemService(LOCATION_SERVICE);
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,5000,5,this);
+
+        locationManager = (LocationManager) getApplicationContext().getSystemService(LOCATION_SERVICE);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 5, this);
 
 
 
